@@ -1,19 +1,23 @@
-# Nine Electrode Analysis 3.1
+# Nine Electrode Analysis 3.2
 
-[下载安装包 / Download for Windows 64-bit](https://github.com/Xin-coding/Nine-Electrode-Analysis-releases/releases/download/v3.1.0/NineElectrodeGUI-3.1.0-win64-setup.exe) · [安装说明 / Installation guide](https://github.com/Xin-coding/Nine-Electrode-Analysis-releases/releases/download/v3.1.0/INSTALL.md) · [发布记录 / Release notes](https://github.com/Xin-coding/Nine-Electrode-Analysis-releases/releases/tag/v3.1.0)
+[下载安装包 / Download for Windows 64-bit](https://github.com/Xin-coding/Nine-Electrode-Analysis-releases/releases/download/v3.2.0/NineElectrodeGUI-3.2.0-win64-setup.exe) · [安装说明 / Installation guide](https://github.com/Xin-coding/Nine-Electrode-Analysis-releases/releases/download/v3.2.0/INSTALL.md) · [发布记录 / Release notes](https://github.com/Xin-coding/Nine-Electrode-Analysis-releases/releases/tag/v3.2.0)
 
-九电极离线分析程序，支持 TDMS / log 时间对齐、手动实验选区与排除、公式编辑、电位参比换算、电阻与功率核算、GC 法拉第效率，以及中英双语界面。
+九电极离线分析程序，支持 TDMS/log 时间对齐、手动实验选区与排除、公式编辑、参比换算、电阻与功率核算、GC 法拉第效率，以及中英双语界面。
 
-v3.1 统一电位变量与参比换算，电位及 iR 图使用单 Y 轴，并修复 CE 份额和化学功率的计算联动。每个实验导出 `Raw_Data.xlsx` 和 `All_Data.xlsx`。原数据保留原始采样、通道名、单位及来源；表格前六行记录名称、改名、变量、实际公式及参数来源，第七行开始数据。单图数据导出同样包含公式表头。
+v3.2 将平衡电位与 FE 分开，公式明确显示 FE，并展示阴极 C1–C3、阳极 A1–A3 与产物名称的对应关系。总功率与残差随实际公式联动。每个实验的 All_Data.xlsx 与 Raw_Data.xlsx 均分为 Electrochemistry 和 GC 工作表；系统导出标签固定英文，用户自定义名称保留原文。原始采样不插值或修正，六行表头记录名称、实际公式和来源。
 
-安装包不内嵌 MATLAB Runtime，安装时从 MathWorks 单独下载所需的免费 R2025a 组件。请从安装快捷方式或 `StartNineElectrode.exe` 启动，启动器自动定位 Runtime。无需 MATLAB 许可或 Microsoft Excel。离线安装及组件补齐方式见安装说明。
+当前已有实验时，读取历史配置默认仅应用计算设置，保留当前源文件、实验区间、实验名、OCP、排除点和实验专属参比参数；完整恢复历史项目需明确选择。旧版配置可迁移，旧文件保留。
+
+安装包不内嵌 MATLAB Runtime，安装时从 MathWorks 单独下载所需的免费 R2025a 组件。请从安装快捷方式或 StartNineElectrode.exe 启动。无需 MATLAB 许可或 Microsoft Excel。离线安装方法见安装说明。
 
 ## English
 
-Windows 64-bit offline analysis for nine-electrode experiments: TDMS/log time alignment, manual experiment intervals and exclusions, editable formulas, electrode potential scales, resistance and power balances, and GC Faradaic efficiency. The interface supports Chinese and English.
+Windows 64-bit offline analysis for nine-electrode experiments, with Chinese and English interfaces. Version 3.2 exposes equilibrium potential and assigned FE as independent inputs, maps each product to its electrode-qualified symbols, and keeps a compact editor displaying the active formula used for the calculation and plot.
 
-Version 3.1 unifies potential symbols with the selected reference scale, uses a single Y axis for potentials and iR-corrected potentials, and corrects CE contribution and chemical-power dependencies. Per-experiment exports include `Raw_Data.xlsx` with native samples and source channel names, plus `All_Data.xlsx` with calculated results. Workbook rows 1–6 document names, naming changes, symbols, actual expressions and parameter/source context; samples begin in row 7. Chart-data exports use the same descriptive headers.
+All_Data.xlsx and Raw_Data.xlsx each separate Electrochemistry from GC. Export labels and descriptions use English while user-authored names remain unchanged. Native samples, source names and provenance are preserved. The six header rows document names, symbols, actual formulas and parameter/source context.
 
-The small installer downloads the required free MATLAB Runtime R2025a components separately from MathWorks. Use the installed shortcut or `StartNineElectrode.exe`; the launcher locates Runtime without depending on a system PATH update. Neither a MATLAB license nor Microsoft Excel is required. See the installation guide for offline use and incomplete Runtime installations.
+Applying saved calculation settings preserves existing experiments, intervals, names, sources, OCP, excluded GC points and experiment-specific reference parameters. Full project restoration is an explicit alternative. Legacy formulas migrate without applying FE twice.
+
+The installer downloads the required free MATLAB Runtime R2025a components separately. Use the installed shortcut or StartNineElectrode.exe; MATLAB and Excel licenses are not required. See the installation guide for offline use and Runtime component requirements.
 
 This repository distributes installers and documentation. Application source is maintained privately. Experimental recordings and user configurations are not distributed.
